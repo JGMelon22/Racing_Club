@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Racing_Club.Date.Enum;
+namespace Racing_Club.Models;
 
 public class AppUser : IdentityUser
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Racing_Club.Date.Enum;
+namespace Racing_Club.Models;
 
 public class Address
 {

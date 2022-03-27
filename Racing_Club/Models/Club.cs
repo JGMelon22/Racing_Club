@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Racing_Club.Date.Enum;
 
-namespace Racing_Club.Date.Enum;
+namespace Racing_Club.Models;
 
 public class Club
 {
