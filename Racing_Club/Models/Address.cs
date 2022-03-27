@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace Racing_Club.Models;
 
 public class Address
