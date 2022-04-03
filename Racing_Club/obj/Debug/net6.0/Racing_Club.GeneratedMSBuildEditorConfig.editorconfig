@@ -15,12 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Club/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Race/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFjZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Shared/Error.cshtml]
