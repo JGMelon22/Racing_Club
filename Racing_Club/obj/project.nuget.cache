@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "Nd1YL51XZ/28tujzdvsdyvIpiPsinHFb/yvnOPy9xAc246tJfePdmkZQRcQoOppHgkuAC/MIlPjDU3n+lpcE+w==",
+  "dgSpecHash": "e0VdggLfP33/DrxbgAIP/zWSpywYrQn0u40uEQ2Uw0OaZrrVnqDQNGPuNYLmnWldcoU76FZQ9LQ2cG/WIDAtCg==",
   "success": true,
   "projectFilePath": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Racing_Club.csproj",
   "expectedPackageFiles": [
+    "/home/joogabriel/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.data.sqlclient/2.1.4/microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.1.1/microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore/6.0.3/microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.3/microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.3/microsoft.entityframeworkcore.analyzers.6.0.3.nupkg.sha512",
+    "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore.design/6.0.3/microsoft.entityframeworkcore.design.6.0.3.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.3/microsoft.entityframeworkcore.relational.6.0.3.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.entityframeworkcore.sqlserver/6.0.3/microsoft.entityframeworkcore.sqlserver.6.0.3.nupkg.sha512",
     "/home/joogabriel/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
