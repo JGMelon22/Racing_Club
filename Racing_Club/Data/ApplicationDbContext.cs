@@ -1,6 +1,6 @@
 using Racing_Club.Models;
 
-namespace Racing_Club.Date;
+namespace Racing_Club.Data;
 
 public class ApplicationDbContext : DbContext
 {

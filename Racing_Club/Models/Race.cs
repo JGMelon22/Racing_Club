@@ -1,4 +1,4 @@
-using Racing_Club.Date.Enum;
+using Racing_Club.Data.Enum;
 
 namespace Racing_Club.Models;
 

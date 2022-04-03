@@ -1,4 +1,4 @@
-namespace Racing_Club.Date.Enum;
+namespace Racing_Club.Data.Enum;
 
 public enum RaceCategory
 {

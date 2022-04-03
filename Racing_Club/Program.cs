@@ -1,5 +1,3 @@
-using Racing_Club.Date;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +10,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 var app = builder.Build();
+
+// Data seeding registration
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+{
+    // Seed.SeedUsersAndRolesAsync(app);
+    Seed.SeedData(app);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
