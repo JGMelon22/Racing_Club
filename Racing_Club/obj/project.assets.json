@@ -9418,19 +9418,19 @@
     ]
   },
   "packageFolders": {
-    "/home/joogabriel/.nuget/packages/": {}
+    "/home/joaog/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Racing_Club.csproj",
+      "projectUniqueName": "/home/joaog/Documents/Racing_Club/Racing_Club/Racing_Club.csproj",
       "projectName": "Racing_Club",
-      "projectPath": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Racing_Club.csproj",
-      "packagesPath": "/home/joogabriel/.nuget/packages/",
-      "outputPath": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/",
+      "projectPath": "/home/joaog/Documents/Racing_Club/Racing_Club/Racing_Club.csproj",
+      "packagesPath": "/home/joaog/.nuget/packages/",
+      "outputPath": "/home/joaog/Documents/Racing_Club/Racing_Club/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/joogabriel/.nuget/NuGet/NuGet.Config"
+        "/home/joaog/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -9491,7 +9491,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/joaog/.dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }

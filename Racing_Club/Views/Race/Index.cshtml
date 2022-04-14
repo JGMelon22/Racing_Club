@@ -1,8 +1,39 @@
 @*
-    // Some fancy stuff 
+    Attach a model to the view
 *@
 
+@model List<Race> 
 @{
 }
 
-<h1>Hello From Race Index</h1>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+
+            @*
+                    Creates the album with the list and populate it with DB data
+            *@
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="@item.Image" width="100%" height="150" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">@item.Title</p>
+                                <p class="card-text">@item.Description</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    </div>
+                                    <small class="text-muted">@item.RaceCategory</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
