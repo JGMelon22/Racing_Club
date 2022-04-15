@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Racing_Club.Models;
 
 namespace Racing_Club.Controllers
@@ -17,6 +16,14 @@ namespace Racing_Club.Controllers
         {
             List<Club> clubs = _context.Clubs.ToList();
             return View(clubs);
+        }
+
+        // Details return code
+        public IActionResult Detail(int id)
+        {
+            // Include will include a field trough a lazy loading method (Join)
+            Club club = _context.Clubs.Include(x => x.Address).FirstOrDefault(y => y.Id == id);
+            return View(club);
         }
     }
 }

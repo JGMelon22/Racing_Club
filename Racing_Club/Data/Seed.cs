@@ -40,7 +40,7 @@ public class Seed
                         Image =
                             "https://media.istockphoto.com/vectors/racing-club-round-linear-logo-of-speed-racing-on-black-background-vector-id1185938729?s=612x612",
                         Description = "This is the description of the second club",
-                        ClubCategory = ClubCategory.City,
+                        ClubCategory = ClubCategory.NatureSide,
                         Address = new Address()
                         {
                             Street = "694 Principal St",
@@ -55,7 +55,7 @@ public class Seed
                         Image =
                             "https://media.istockphoto.com/vectors/design-of-racing-car-team-badge-vector-id1250970452?s=612x612",
                         Description = "This is the description of the third club",
-                        ClubCategory = ClubCategory.City,
+                        ClubCategory = ClubCategory.PrivateProperty,
                         Address = new Address()
                         {
                             Street = "Lacemakers Court 22 St",
@@ -92,7 +92,7 @@ public class Seed
                                 "https://images.pexels.com/photos/9843281/pexels-photo-9843281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                             Description = "This is the description of the second race",
                             RaceCategory = RaceCategory.Rally,
-                            AddressId = 5,
+                            AddressId = 2,
                             Address = new Address()
                             {
                                 Street = "Lacemakers Court 22 St",
