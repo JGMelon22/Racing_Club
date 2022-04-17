@@ -1,7 +1,13 @@
+using Racing_Club.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Registering the DIs
+builder.Services.AddScoped<IClubRepository, ClubRepository>();
+builder.Services.AddScoped<IRaceRepository, RaceRepository>();
 
 // Registers the DbContext into the "start up"
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
