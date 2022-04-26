@@ -1,5 +1,3 @@
-using Racing_Club.Models;
-
 namespace Racing_Club.Controllers
 {
     public class ClubController : Controller
@@ -23,6 +21,23 @@ namespace Racing_Club.Controllers
         {
             Club club = await _clubRepository.GetByIdAsync(id);
             return View(club);
+        }
+
+        // CREATE
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST Request
+        [HttpPost]
+        public async Task<IActionResult> Create(Club club)
+        {
+            if (!ModelState.IsValid)  // Basic validation...
+                return View(club);
+
+            _clubRepository.Add(club); // If do not pass, will return to the "Index" view
+            return RedirectToAction("Index");
         }
     }
 }

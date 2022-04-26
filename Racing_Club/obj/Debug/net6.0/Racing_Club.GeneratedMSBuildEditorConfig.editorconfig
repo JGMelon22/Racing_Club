@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Club/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Club/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9EZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
