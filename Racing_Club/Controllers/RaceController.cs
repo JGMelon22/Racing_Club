@@ -23,5 +23,22 @@ namespace Racing_Club.Controllers
             Race race = await _raceRepository.GetByIdAsync(id);
             return View(race);
         }
+
+        // CREATE (View call)
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        public async Task<IActionResult> Create(Race race)
+        {
+            if (!ModelState.IsValid)
+                return View(race);
+
+            _raceRepository.Add(race);
+            return RedirectToAction("Index");
+        }
     }
 }
