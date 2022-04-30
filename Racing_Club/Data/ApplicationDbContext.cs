@@ -1,5 +1,3 @@
-using Racing_Club.Models;
-
 namespace Racing_Club.Data;
 
 public class ApplicationDbContext : DbContext

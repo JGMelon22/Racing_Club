@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using Racing_Club.Data.Enum;
-using Racing_Club.Models;
-
 namespace Racing_Club.Data;
 
 public class Seed

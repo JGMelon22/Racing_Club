@@ -524,3 +524,4 @@
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/Racing_Club.pdb
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/Racing_Club.genruntimeconfig.cache
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/ref/Racing_Club.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/CloudinaryDotNet.dll

@@ -1,13 +1,17 @@
+using Racing_Club.ViewModels;
+
 namespace Racing_Club.Controllers
 {
     public class RaceController : Controller
     {
         // Dep. Injection
         private readonly IRaceRepository _raceRepository;
+        private readonly IPhotosService _photoService;
 
-        public RaceController(IRaceRepository raceRepository)
+        public RaceController(IRaceRepository raceRepository, IPhotosService photoService)
         {
             _raceRepository = raceRepository;
+            _photoService = photoService;
         }
 
         public async Task<IActionResult> Index()
@@ -32,13 +36,34 @@ namespace Racing_Club.Controllers
 
         // POST
         [HttpPost]
-        public async Task<IActionResult> Create(Race race)
+        public async Task<IActionResult> Create(CreateRaceViewModel raceVM)
         {
-            if (!ModelState.IsValid)
-                return View(race);
+            if (ModelState.IsValid)
+            {
+                var result = await _photoService.AddPhotoAsync(raceVM.Image);
+                var race = new Race
+                {
+                    Title = raceVM.Title,
+                    Description = raceVM.Description,
+                    Image = result.Url.ToString(),
+                    Address = new Address()
+                    {
+                        Street = raceVM.Address.Street,
+                        City = raceVM.Address.City,
+                        State = raceVM.Address.State
+                    }
+                };
 
-            _raceRepository.Add(race);
-            return RedirectToAction("Index");
+                _raceRepository.Add(race);
+                return RedirectToAction("Index");
+            }
+
+            else
+            {
+                ModelState.AddModelError("", "Failed to upload photo");
+            }
+
+            return View(raceVM);
         }
     }
 }

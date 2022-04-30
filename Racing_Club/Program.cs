@@ -1,4 +1,5 @@
 using Racing_Club.Repository;
+using Racing_Club.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,11 @@ builder.Services.AddControllersWithViews();
 // Registering the DIs
 builder.Services.AddScoped<IClubRepository, ClubRepository>();
 builder.Services.AddScoped<IRaceRepository, RaceRepository>();
+
+// Register Cloudinary service
+builder.Services.AddScoped<IPhotosService, PhotoService>();
+builder.Services.Configure<CloudinarySettings>(builder.Configuration
+    .GetSection("CloudinarySettings"));
 
 // Registers the DbContext into the "start up"
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
