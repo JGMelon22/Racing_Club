@@ -8,7 +8,8 @@ namespace Racing_Club.Controllers
         private readonly IClubRepository _clubRepository;
         private readonly IPhotosService _photoService;
 
-        public ClubController(IClubRepository clubRepository, IPhotosService photoService) // Refactoring to use the Repo. Pattern
+        public ClubController(IClubRepository clubRepository,
+            IPhotosService photoService) // Refactoring to use the Repo. Pattern
         {
             _clubRepository = clubRepository;
             _photoService = photoService;
@@ -62,6 +63,70 @@ namespace Racing_Club.Controllers
             }
 
             return View(clubVM);
+        }
+
+        // Edit
+        public async Task<IActionResult> Edit(int id)
+        {
+            var club = await _clubRepository.GetByIdAsync(id);
+
+            if (club == null)
+                return View("Error");
+
+            var clubVM = new EditClubViewModel
+            {
+                Title = club.Title,
+                Description = club.Description,
+                AddressId = club.AddressId,
+                Address = club.Address,
+                URL = club.Image,
+                ClubCategory = club.ClubCategory
+            };
+
+            return View(clubVM);
+        }
+
+        // Edit Post
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditClubViewModel clubVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to Edit Club");
+                return View("Edit");
+            }
+
+            // Will get data from DB if works the previous step
+            var userClub = await _clubRepository.GetByIdAsyncNoTracking(id);
+
+            if (userClub != null)
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userClub.Image); // Deletes the previous picture
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", "Could not Delete Photo");
+                    return View(clubVM);
+                }
+
+            // Been valid, will add the new photo
+            var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
+
+            var club = new Club
+            {
+                Id = id,
+                Title = clubVM.Title,
+                Description = clubVM.Description,
+                Image = photoResult.Url.ToString(),
+                AddressId = clubVM.AddressId,
+                Address = clubVM.Address
+            };
+
+            // Update the infos inside the DB 
+            _clubRepository.Update(club);
+
+            return RedirectToAction("Index");
         }
     }
 }

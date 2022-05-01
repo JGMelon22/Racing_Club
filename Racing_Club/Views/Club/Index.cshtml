@@ -29,7 +29,8 @@
                                             asp-controller="club" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">
                                             View
                                         </a>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        @* For some reason, you can not use buttons with tag helpers, just <a/> *@
+                                        <a type="button" asp-controller="club" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
                                     </div>
                                     <small class="text-muted">@item.ClubCategory</small>
                                 </div>

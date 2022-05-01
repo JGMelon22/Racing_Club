@@ -22,6 +22,13 @@ public class ClubRepository : IClubRepository
         return await _context.Clubs.Include(x => x.Address).FirstOrDefaultAsync(y => y.Id == id);
     }
 
+    // No Tracking
+    public async Task<Club> GetByIdAsyncNoTracking(int id)
+    {
+        return await _context.Clubs.Include(x => x.Address).AsNoTracking()
+            .FirstOrDefaultAsync(y => y.Id == id);
+    }
+
     public async Task<IEnumerable<Club>> GetClubByCity(string city)
     {
         return await _context.Clubs.Where(x => x.Address.City.Contains(city)).ToListAsync();
@@ -32,7 +39,7 @@ public class ClubRepository : IClubRepository
         _context.AddAsync(club);
         return Save();
     }
-    
+
     public bool Update(Club club)
     {
         _context.Update(club);

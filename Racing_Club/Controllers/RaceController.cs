@@ -65,5 +65,64 @@ namespace Racing_Club.Controllers
 
             return View(raceVM);
         }
+
+        // Edit
+        public async Task<IActionResult> Edit(int id)
+        {
+            var race = await _raceRepository.GetByIdAsync(id);
+            if (race == null) return View("Error");
+            var clubVM = new EditRaceViewModel
+            {
+                Title = race.Title,
+                Description = race.Description,
+                AddressId = race.AddressId,
+                Address = race.Address,
+                URL = race.Image,
+                RaceCategory = race.RaceCategory
+            };
+            return View(clubVM);
+        }
+
+        // Edit Post
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditRaceViewModel raceVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to Edit Race");
+                return View("Edit");
+            }
+
+            // Gets data from the DB 
+            var userRace = await _raceRepository.GetByIdAsyncNoTracking(id);
+
+            if (userRace != null)
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userRace.Image); // Deletes the previous picture
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", "Could not Delete Photo");
+                }
+
+            // Been valid, will add the new photo
+            var photoResult = await _photoService.AddPhotoAsync(raceVM.Image);
+
+            var race = new Race
+            {
+                Id = id,
+                Title = raceVM.Title,
+                Description = raceVM.Description,
+                Image = photoResult.Url.ToString(),
+                AddressId = raceVM.AddressId,
+                Address = raceVM.Address
+            };
+
+            // Update the infos inside the DB
+            _raceRepository.Update(race);
+
+            return RedirectToAction("Index");
+        }
     }
 }

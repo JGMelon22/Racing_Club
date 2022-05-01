@@ -18,10 +18,16 @@ public class RaceRepository : IRaceRepository
 
     public async Task<Race> GetByIdAsync(int id)
     {
-        // Include will include a field trough a lazy loading method (Join)
-        return await _context.Races.Include(x => x.Id == id).FirstOrDefaultAsync();
+        return await _context.Races.Include(x => x.Address).FirstOrDefaultAsync();
     }
 
+    // No tracking
+    public async Task<Race> GetByIdAsyncNoTracking(int id)
+    {
+        return await _context.Races.Include(x => x.Address)
+            .AsNoTracking().FirstOrDefaultAsync();
+    }
+    
     public async Task<IEnumerable<Race>> GetAllRaceByCity(string city)
     {
         return await _context.Races.Where(x => x.Address.City.Contains(city)).ToListAsync();
