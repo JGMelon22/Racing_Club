@@ -61,96 +61,105 @@ public class Seed
                     }
                 });
                 context.SaveChanges();
-
-                // Races
-                if (!context.Races.Any())
-                {
-                    context.Races.AddRange(new List<Race>()
-                    {
-                        new Race()
-                        {
-                            Title = "Racing 1",
-                            Image =
-                                "https://images.pexels.com/photos/10342583/pexels-photo-10342583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                            Description = "This is the description of the first race",
-                            RaceCategory = RaceCategory.RaceTrack,
-                            Address = new Address()
-                            {
-                                Street = "123 Main St",
-                                City = "Belo Horizonte",
-                                State = "MG"
-                            }
-                        },
-                        new Race()
-                        {
-                            Title = "Racing 2",
-                            Image =
-                                "https://images.pexels.com/photos/9843281/pexels-photo-9843281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                            Description = "This is the description of the second race",
-                            RaceCategory = RaceCategory.Rally,
-                            AddressId = 2,
-                            Address = new Address()
-                            {
-                                Street = "Lacemakers Court 22 St",
-                                City = "Charllote",
-                                State = "NC"
-                            }
-                        }
-                    });
-                    context.SaveChanges();
-                }
             }
-        }
 
-        // Remove comment later, as we will add user roles after wards
-        /*
-        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
-        {
-            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            // Races
+            if (!context.Races.Any())
             {
-
-                //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-                if (!await roleManager.RoleExistsAsync(UserRoles.User))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
-
-                //Users
-                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "teddysmithdeveloper@gmail.com";
-
-                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if (adminUser == null)
+                context.Races.AddRange(new List<Race>()
                 {
-                    var newAdminUser = new AppUser()
+                    new Race()
                     {
-                        UserName = "teddysmithdev",
-                        Email = adminUserEmail,
-                        EmailConfirmed = true
-                    };
-                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
-                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
-                }
-
-
-                string appUserEmail = "user@etickets.com";
-
-                var appUser = await userManager.FindByEmailAsync(appUserEmail);
-                if (appUser == null)
-                {
-                    var newAppUser = new AppUser()
+                        Title = "Racing 1",
+                        Image =
+                            "https://images.pexels.com/photos/10342583/pexels-photo-10342583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        Description = "This is the description of the first race",
+                        RaceCategory = RaceCategory.RaceTrack,
+                        Address = new Address()
+                        {
+                            Street = "123 Main St",
+                            City = "Belo Horizonte",
+                            State = "MG"
+                        }
+                    },
+                    new Race()
                     {
-                        UserName = "app-user",
-                        Email = appUserEmail,
-                        EmailConfirmed = true
-                    };
-                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
-                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
-                }
+                        Title = "Racing 2",
+                        Image =
+                            "https://images.pexels.com/photos/9843281/pexels-photo-9843281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        Description = "This is the description of the second race",
+                        RaceCategory = RaceCategory.Rally,
+                        AddressId = 2,
+                        Address = new Address()
+                        {
+                            Street = "Lacemakers Court 22 St",
+                            City = "Charllote",
+                            State = "NC"
+                        }
+                    }
+                });
+                context.SaveChanges();
             }
         }
-        */
+    }
+
+
+    public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+    {
+        using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+        {
+            //Roles
+            var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+            if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+            if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+
+            //Users
+            var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+            string adminUserEmail = "teddysmithdeveloper@gmail.com"; // Here you can use your email (test purposes)
+
+            var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+            if (adminUser == null)
+            {
+                var newAdminUser = new AppUser()
+                {
+                    UserName = "jgvm22", // Here you can use a personalized nickname
+                    Email = adminUserEmail,
+                    EmailConfirmed = true,
+                    Address = new Address
+                    {
+                        Street = "St Somewhere 85",
+                        City = "RJ",
+                        State = "Rio de Janeiro"
+                    }
+                };
+                await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+            }
+
+
+            string appUserEmail = "user@etickets.com";
+
+            var appUser = await userManager.FindByEmailAsync(appUserEmail);
+            if (appUser == null)
+            {
+                var newAppUser = new AppUser()
+                {
+                    UserName = "app-user",
+                    Email = appUserEmail,
+                    EmailConfirmed = true,
+                    Address = new Address
+                    {
+                        Street = "St Somewhere 85",
+                        City = "RJ",
+                        State = "Rio de Janeiro"
+                    }
+                };
+                await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+            }
+        }
     }
 }

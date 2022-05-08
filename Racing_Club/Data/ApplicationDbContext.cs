@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 namespace Racing_Club.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<AppUser> // maps based at the model 
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {

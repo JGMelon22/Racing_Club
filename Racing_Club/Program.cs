@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Racing_Club.Repository;
 using Racing_Club.Services;
 
@@ -21,13 +22,23 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Register Identity Framework
+// Needs to be bellow db context call
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddMemoryCache(); // Improve performance 
+builder.Services.AddSession(); // 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(); // Cookie authentication  
+
 var app = builder.Build();
 
 // Data seeding registration
 if (args.Length == 1 && args[0].ToLower() == "seeddata")
 {
-    // Seed.SeedUsersAndRolesAsync(app);
-    Seed.SeedData(app);
+    await Seed.SeedUsersAndRolesAsync(app);
+    // Seed.SeedData(app);
 }
 
 // Configure the HTTP request pipeline.
