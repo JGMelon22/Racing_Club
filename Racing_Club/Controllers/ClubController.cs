@@ -1,5 +1,3 @@
-using Racing_Club.ViewModels;
-
 namespace Racing_Club.Controllers
 {
     public class ClubController : Controller

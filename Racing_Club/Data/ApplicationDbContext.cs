@@ -6,7 +6,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser> // maps based at 
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-        
     }
 
     public DbSet<Race> Races { get; set; }
