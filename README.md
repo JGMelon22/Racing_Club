@@ -8,11 +8,11 @@ An ASP.NET Core MVC small project to represents a website to gather car racers.<
 - .NET 6.0.201.
 
 # Used NuGet Packages
-- Microsoft.EntityFrameworkCore (6.0.4);
-- Microsoft.EntityFrameworkCore.Design (6.0.4);
-- Microsoft.EntityFrameworkCore.SqlServer (6.0.4);
-- Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.4);
-- Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.3);
+- Microsoft.EntityFrameworkCore (6.0.5);
+- Microsoft.EntityFrameworkCore.Design (6.0.5);
+- Microsoft.EntityFrameworkCore.SqlServer (6.0.5);
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.5);
+- Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.4);
 - CloudinaryDotNet (1.17.0).
 
 # Image

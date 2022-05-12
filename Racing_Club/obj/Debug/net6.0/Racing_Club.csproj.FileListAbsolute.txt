@@ -269,9 +269,13 @@
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Racing_Club.runtimeconfig.json
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Racing_Club.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Racing_Club.pdb
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/CloudinaryDotNet.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Humanizer.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/MessagePack.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/MessagePack.Annotations.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Razor.Language.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Build.Locator.dll
@@ -298,6 +302,8 @@
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
+/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Identity.Client.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
@@ -524,9 +530,3 @@
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/Racing_Club.pdb
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/Racing_Club.genruntimeconfig.cache
 /home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/ref/Racing_Club.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/CloudinaryDotNet.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
-/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll

@@ -1,5 +1,4 @@
 // Handles the login logic
-
 namespace Racing_Club.Controllers;
 
 public class AccountController : Controller
@@ -63,5 +62,50 @@ public class AccountController : Controller
         // User was not found
         TempData["Error"] = "Informed credentials are wrong. Please, try again.";
         return View(loginViewModel);
+    }
+
+    // GET to Register a User
+    public IActionResult Register()
+    {
+        var response = new RegisterViewModel();
+        return View(response);
+    }
+
+
+    [HttpPost]
+    public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
+    {
+        if (!ModelState.IsValid)
+            return View(registerViewModel);
+
+        var user = await _userManager.FindByEmailAsync(registerViewModel.EmailAddress);
+
+        if (user != null)
+        {
+            TempData["Error"] = "This Email is Already in use";
+            return View(registerViewModel);
+        }
+
+        // Creates a new user
+        var newUser = new AppUser
+        {
+            Email = registerViewModel.EmailAddress,
+            UserName = registerViewModel.EmailAddress // Generates the user name based on his/hers email 
+        };
+
+        var newUserResponse = await _userManager.CreateAsync(newUser, registerViewModel.Password);
+
+        if (newUserResponse.Succeeded)
+            await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+        
+        return RedirectToAction("Index","Home");
+    }
+
+    // Log out
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("Index", "Race");
     }
 }
