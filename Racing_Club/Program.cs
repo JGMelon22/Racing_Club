@@ -53,6 +53,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication(); // We need this "Use" to allow implement the tag helpers responsible to restrict the dashboard view
 
 app.UseAuthorization();
 

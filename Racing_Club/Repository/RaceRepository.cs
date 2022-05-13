@@ -16,9 +16,9 @@ public class RaceRepository : IRaceRepository
         return await _context.Races.ToListAsync();
     }
 
-    public async Task<Race> GetByIdAsync(int id)
+    public async Task<Race> GetByIdAsync(int id) // Fixed! Here we were not finding by the current Id at the page
     {
-        return await _context.Races.Include(x => x.Address).FirstOrDefaultAsync();
+        return await _context.Races.Include(x => x.Address).FirstOrDefaultAsync(y=> y.Id ==id);
     }
 
     // No tracking

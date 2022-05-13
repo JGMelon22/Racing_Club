@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Racing_Club.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/darkly.css"/>
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Racing Club</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,20 +21,40 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Club" asp-action="Index">Clubs</a>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Club" asp-action="Index">Clubs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Race" asp-action="Index">Races</a>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Race" asp-action="Index">Races</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                    </li>
+
+                    @if (User.Identity.IsAuthenticated) @* Displays the log out button and the dashboard for the user *@
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Dashboard"
+                               asp-for="Index">
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <form asp-area="" asp-controller="Account" asp-action="Logout">
+                                <button class="btn btn-outline-danger">Logout</button>
+                            </form>
+                        </li>
+                    }
+
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>

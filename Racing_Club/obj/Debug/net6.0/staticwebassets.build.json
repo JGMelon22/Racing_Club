@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M043IGdZvc6rWsSXT8SPpOaVv/5JrhDGOcV+6IW3ypw=",
+  "Hash": "ej4hSklh5RU4voSKk23UdMA5q87ibkO8B7dry3yjzTg=",
   "Source": "Racing_Club",
   "BasePath": "_content/Racing_Club",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/obj/Debug/net6.0/scopedcss/projectbundle/Racing_Club.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/wwwroot/css/darkly.css",
+      "SourceId": "Racing_Club",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/wwwroot/",
+      "BasePath": "_content/Racing_Club",
+      "RelativePath": "css/darkly.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/darkly.css"
     },
     {
       "Identity": "/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/wwwroot/css/site.css",

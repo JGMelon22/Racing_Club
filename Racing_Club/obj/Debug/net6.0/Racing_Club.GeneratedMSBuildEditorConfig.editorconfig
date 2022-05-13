@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Club/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Club/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2x1Yi9EZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -49,6 +53,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Race/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFjZS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Race/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFjZS9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/joogabriel/Documents/CodeRelated/Codes/AspNet/Racing_Club/Racing_Club/Views/Race/Detail.cshtml]
