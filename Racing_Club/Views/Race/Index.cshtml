@@ -28,8 +28,13 @@
                                             asp-controller="race" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">
                                             View
                                         </a>
-                                        <a type="button" asp-controller="race" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                        <a type="button" asp-controller="race" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                        {
+                                            <a type="button" asp-controller="race" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                            <a type="button" asp-controller="race" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                        }
+
                                     </div>
                                     <small class="text-muted">@item.RaceCategory</small>
                                 </div>

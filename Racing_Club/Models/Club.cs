@@ -17,5 +17,5 @@ public class Club
 
     [ForeignKey("AppUser")] public string? AppuserId { get; set; }
 
-    public AppUser? Appuser { get; set; }
+    public AppUser? AppUser { get; set; }
 }

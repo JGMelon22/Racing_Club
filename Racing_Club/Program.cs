@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 // Registering the DIs
 builder.Services.AddScoped<IClubRepository, ClubRepository>();
 builder.Services.AddScoped<IRaceRepository, RaceRepository>();
+builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
 
 // Register Cloudinary service
 builder.Services.AddScoped<IPhotosService, PhotoService>();
