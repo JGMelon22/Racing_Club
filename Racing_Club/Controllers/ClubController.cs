@@ -5,12 +5,14 @@ namespace Racing_Club.Controllers
         // Dep. Injection
         private readonly IClubRepository _clubRepository;
         private readonly IPhotosService _photoService;
+        private readonly IHttpContextAccessor _contextAccessor;
 
         public ClubController(IClubRepository clubRepository,
-            IPhotosService photoService) // Refactoring to use the Repo. Pattern
+            IPhotosService photoService, IHttpContextAccessor contextAccessor) // Refactoring to use the Repo. Pattern
         {
             _clubRepository = clubRepository;
             _photoService = photoService;
+            _contextAccessor = contextAccessor;
         }
 
         public async Task<IActionResult> Index()
@@ -29,7 +31,14 @@ namespace Racing_Club.Controllers
         // CREATE
         public IActionResult Create()
         {
-            return View();
+            // UserId from the server, thanks IHttpContextAccessor <3
+            var curUserId = _contextAccessor.HttpContext.User.GetUserId();
+            var createClubViewModel = new CreateClubViewModel
+            {
+                AppUserId = curUserId
+            };
+
+            return View(createClubViewModel);
         }
 
         // POST Request
@@ -44,6 +53,7 @@ namespace Racing_Club.Controllers
                     Title = clubVM.Title,
                     Description = clubVM.Description,
                     Image = result.Url.ToString(), // We will store the URL into the DB
+                    AppuserId = clubVM.AppUserId,
                     Address = new Address()
                     {
                         Street = clubVM.Address.Street,

@@ -11,18 +11,18 @@ public class DashboardRepository : IDashboardRepository
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public async Task<List<Race>> GetAllUserRaces()
+    public async Task<List<Race>> GetAllUserRaces() // Updated to use our extension from claim
     {
-        var currentUser = _httpContextAccessor.HttpContext?.User; // Might come empty
-        var userRaces = _context.Races.Where(x => x.AppUser.Id == currentUser.ToString());
+        var currentUser = _httpContextAccessor.HttpContext?.User.GetUserId(); // Might come empty
+        var userRaces = _context.Races.Where(x => x.AppUser.Id == currentUser);
 
         return userRaces.ToList();
     }
 
     public async Task<List<Club>> GetAllUserClubs()
     {
-        var currentUser = _httpContextAccessor.HttpContext?.User; // Might come empty
-        var userClubs = _context.Clubs.Where(x => x.AppUser.Id == currentUser.ToString());
+        var currentUser = _httpContextAccessor.HttpContext?.User.GetUserId(); // Might come empty
+        var userClubs = _context.Clubs.Where(x => x.AppUser.Id == currentUser);
 
         return userClubs.ToList();
     }
