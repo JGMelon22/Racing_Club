@@ -23,6 +23,14 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
+
+                    @* Only display if the user is log in *@
+                    @if (User.Identity.IsAuthenticated) @* Displays the log out button and the dashboard for the user *@
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index">Racers</a>
+                        </li>
+                    }
                     <li class="nav-item">
                         <a class="nav-link text-light" asp-area="" asp-controller="Club" asp-action="Index">Clubs</a>
                     </li>
