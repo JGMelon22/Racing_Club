@@ -18,5 +18,5 @@ An ASP.NET Core MVC small project to represents a website to gather car racers.<
 # Image
 ![illustration](https://user-images.githubusercontent.com/73988556/160298047-4314428e-222e-420c-962f-0b736e4423a9.png)
 
-- ps: the images are now upload to Cloudinary;
-- ps2: the in usage bootstrap the is [Darkly](https://bootswatch.com/darkly/)
+- ps: the images are now uploaded to Cloudinary;
+- ps2: the in usage bootstrap theme is [Darkly](https://bootswatch.com/darkly/)
