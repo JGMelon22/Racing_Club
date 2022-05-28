@@ -4,11 +4,11 @@ namespace Racing_Club.Controllers
     {
         // Dep. Injection
         private readonly IClubRepository _clubRepository;
-        private readonly IPhotosService _photoService;
+        private readonly IPhotoService _photoService;
         private readonly IHttpContextAccessor _contextAccessor;
 
         public ClubController(IClubRepository clubRepository,
-            IPhotosService photoService, IHttpContextAccessor contextAccessor) // Refactoring to use the Repo. Pattern
+            IPhotoService photoService, IHttpContextAccessor contextAccessor) // Refactoring to use the Repo. Pattern
         {
             _clubRepository = clubRepository;
             _photoService = photoService;

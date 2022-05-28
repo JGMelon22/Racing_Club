@@ -6,10 +6,10 @@ namespace Racing_Club.Controllers
     {
         // Dep. Injection
         private readonly IRaceRepository _raceRepository;
-        private readonly IPhotosService _photoService;
+        private readonly IPhotoService _photoService;
         private readonly IHttpContextAccessor _contextAccessor;
 
-        public RaceController(IRaceRepository raceRepository, IPhotosService photoService,
+        public RaceController(IRaceRepository raceRepository, IPhotoService photoService,
             IHttpContextAccessor contextAccessor)
         {
             _raceRepository = raceRepository;

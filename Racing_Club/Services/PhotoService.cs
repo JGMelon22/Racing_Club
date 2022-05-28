@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 
 namespace Racing_Club.Services;
 
-public class PhotoService : IPhotosService
+public class PhotoService : IPhotoService
 {
     private readonly Cloudinary _cloundinary;
 

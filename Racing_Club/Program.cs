@@ -14,7 +14,7 @@ builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
 builder.Services.AddScoped<IUsersRepository, UserRepository>();
 
 // Register Cloudinary service
-builder.Services.AddScoped<IPhotosService, PhotoService>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration
     .GetSection("CloudinarySettings"));
 
