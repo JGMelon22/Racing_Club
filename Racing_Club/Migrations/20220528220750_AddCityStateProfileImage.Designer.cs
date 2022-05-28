@@ -12,8 +12,8 @@ using Racing_Club.Data;
 namespace Racing_Club.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220528211247_AddCityStateProfileImage_Fix")]
-    partial class AddCityStateProfileImage_Fix
+    [Migration("20220528220750_AddCityStateProfileImage")]
+    partial class AddCityStateProfileImage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -4,7 +4,7 @@
 
 namespace Racing_Club.Migrations
 {
-    public partial class AddCityStateProfileImage_Fix : Migration
+    public partial class AddCityStateProfileImage : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
