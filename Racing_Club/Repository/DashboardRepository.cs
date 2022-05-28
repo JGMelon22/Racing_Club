@@ -26,4 +26,10 @@ public class DashboardRepository : IDashboardRepository
 
         return userClubs.ToList();
     }
+    
+    // Getting a user by Id
+    public async Task<AppUser> GetUserById(string id)
+    {
+        return await _context.Users.FindAsync(id);
+    }
 }
