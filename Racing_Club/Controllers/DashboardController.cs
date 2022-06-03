@@ -8,7 +8,7 @@ public class DashboardController : Controller
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IPhotoService _photoService;
 
-    public DashboardController(IDashboardRepository dashboardRepository, 
+    public DashboardController(IDashboardRepository dashboardRepository,
         IHttpContextAccessor httpContextAccessor, IPhotoService photoService)
     {
         _dashboardRepository = dashboardRepository;
@@ -22,7 +22,9 @@ public class DashboardController : Controller
         user.Id = editVM.Id;
         user.Pace = editVM.Pace;
         user.Mileage = editVM.Mileage;
-        user.ProfileImageUrl = photoResult.Url.ToString(); // Cloudinary will be the responsible to generate the url to us, we will only convert to string
+        user.ProfileImageUrl =
+            photoResult.Url
+                .ToString(); // Cloudinary will be the responsible to generate the url to us, we will only convert to string
         user.City = editVM.City;
         user.State = editVM.State;
     }
@@ -34,7 +36,7 @@ public class DashboardController : Controller
         var userClubs = await _dashboardRepository.GetAllUserClubs();
 
         // All in one package thanks to the view model :)
-        var dashboardViewModel = new DashboardViewModel()
+        var dashboardViewModel = new DashboardViewModel
         {
             Races = userRaces,
             Clubs = userClubs
@@ -77,7 +79,7 @@ public class DashboardController : Controller
             return View("EditUserProfile", editVM);
         }
 
-        AppUser user = await _dashboardRepository.GetByIdNoTracking(editVM.Id);
+        var user = await _dashboardRepository.GetByIdNoTracking(editVM.Id);
 
         if (user.ProfileImageUrl == "" || user.ProfileImageUrl == null)
         {

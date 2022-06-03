@@ -18,7 +18,7 @@ public class RaceRepository : IRaceRepository
 
     public async Task<Race> GetByIdAsync(int id) // Fixed! Here we were not finding by the current Id at the page
     {
-        return await _context.Races.Include(x => x.Address).FirstOrDefaultAsync(y=> y.Id ==id);
+        return await _context.Races.Include(x => x.Address).FirstOrDefaultAsync(y => y.Id == id);
     }
 
     // No tracking
@@ -27,7 +27,7 @@ public class RaceRepository : IRaceRepository
         return await _context.Races.Include(x => x.Address)
             .AsNoTracking().FirstOrDefaultAsync();
     }
-    
+
     public async Task<IEnumerable<Race>> GetAllRaceByCity(string city)
     {
         return await _context.Races.Where(x => x.Address.City.Contains(city)).ToListAsync();

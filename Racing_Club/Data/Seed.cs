@@ -13,16 +13,16 @@ public class Seed
             // Clubs
             if (!context.Clubs.Any())
             {
-                context.Clubs.AddRange(new List<Club>()
+                context.Clubs.AddRange(new List<Club>
                 {
-                    new Club()
+                    new()
                     {
                         Title = "Racing Club A",
                         Image =
                             "https://media.istockphoto.com/vectors/checkered-flag-for-car-racing-or-rally-club-modern-illustration-vector-id1339105507",
                         Description = "This is the description of the first club",
                         ClubCategory = ClubCategory.City,
-                        Address = new Address()
+                        Address = new Address
                         {
                             Street = "123 Main St",
                             City = "Belo Horizonte",
@@ -30,14 +30,14 @@ public class Seed
                         }
                     },
 
-                    new Club()
+                    new()
                     {
                         Title = "Racing Club B",
                         Image =
                             "https://media.istockphoto.com/vectors/racing-club-round-linear-logo-of-speed-racing-on-black-background-vector-id1185938729?s=612x612",
                         Description = "This is the description of the second club",
                         ClubCategory = ClubCategory.NatureSide,
-                        Address = new Address()
+                        Address = new Address
                         {
                             Street = "694 Principal St",
                             City = "Niteroi",
@@ -45,14 +45,14 @@ public class Seed
                         }
                     },
 
-                    new Club()
+                    new()
                     {
                         Title = "Racing Club C",
                         Image =
                             "https://media.istockphoto.com/vectors/design-of-racing-car-team-badge-vector-id1250970452?s=612x612",
                         Description = "This is the description of the third club",
                         ClubCategory = ClubCategory.PrivateProperty,
-                        Address = new Address()
+                        Address = new Address
                         {
                             Street = "Lacemakers Court 22 St",
                             City = "Charlotte",
@@ -66,23 +66,23 @@ public class Seed
             // Races
             if (!context.Races.Any())
             {
-                context.Races.AddRange(new List<Race>()
+                context.Races.AddRange(new List<Race>
                 {
-                    new Race()
+                    new()
                     {
                         Title = "Racing 1",
                         Image =
                             "https://images.pexels.com/photos/10342583/pexels-photo-10342583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                         Description = "This is the description of the first race",
                         RaceCategory = RaceCategory.RaceTrack,
-                        Address = new Address()
+                        Address = new Address
                         {
                             Street = "123 Main St",
                             City = "Belo Horizonte",
                             State = "MG"
                         }
                     },
-                    new Race()
+                    new()
                     {
                         Title = "Racing 2",
                         Image =
@@ -90,7 +90,7 @@ public class Seed
                         Description = "This is the description of the second race",
                         RaceCategory = RaceCategory.Rally,
                         AddressId = 2,
-                        Address = new Address()
+                        Address = new Address
                         {
                             Street = "Lacemakers Court 22 St",
                             City = "Charllote",
@@ -118,12 +118,12 @@ public class Seed
 
             //Users
             var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-            string adminUserEmail = "teddysmithdeveloper@gmail.com"; // Here you can use your email (test purposes)
+            var adminUserEmail = "teddysmithdeveloper@gmail.com"; // Here you can use your email (test purposes)
 
             var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
             if (adminUser == null)
             {
-                var newAdminUser = new AppUser()
+                var newAdminUser = new AppUser
                 {
                     UserName = "jgvm22", // Here you can use a personalized nickname
                     Email = adminUserEmail,
@@ -140,12 +140,12 @@ public class Seed
             }
 
 
-            string appUserEmail = "user@etickets.com";
+            var appUserEmail = "user@etickets.com";
 
             var appUser = await userManager.FindByEmailAsync(appUserEmail);
             if (appUser == null)
             {
-                var newAppUser = new AppUser()
+                var newAppUser = new AppUser
                 {
                     UserName = "app-user",
                     Email = appUserEmail,

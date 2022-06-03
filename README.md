@@ -5,7 +5,8 @@ An ASP.NET Core MVC small project to represents a website to gather car racers.<
 - SQL Server 2019;
 - Rider;
 - Azure Data Studio and DBeaver (to manage SQL Queries);
-- .NET 6.0.202.
+- .NET 6.0.300;
+- Cloudinary.
 
 # Used NuGet Packages
 - Microsoft.EntityFrameworkCore (6.0.5);

@@ -1,11 +1,12 @@
 // Handles the login logic
+
 namespace Racing_Club.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly UserManager<AppUser> _userManager;
-    private readonly SignInManager<AppUser> _signInManager;
     private readonly ApplicationDbContext _context;
+    private readonly SignInManager<AppUser> _signInManager;
+    private readonly UserManager<AppUser> _userManager;
 
     // DI
     public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
@@ -17,9 +18,9 @@ public class AccountController : Controller
     }
 
     /// <summary>
-    /// In theory, AddSession and AddMemoryCache already does it
-    /// But we want to make sure the user and his password will be kept
-    /// while he/she is using after some time using
+    ///     In theory, AddSession and AddMemoryCache already does it
+    ///     But we want to make sure the user and his password will be kept
+    ///     while he/she is using after some time using
     /// </summary>
     /// <returns></returns
     [HttpGet]
@@ -48,10 +49,7 @@ public class AccountController : Controller
                 // Pwd ok, sign in
                 var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
 
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Race"); // Action - Controller
-                }
+                if (result.Succeeded) return RedirectToAction("Index", "Race"); // Action - Controller
             }
 
             // If it fails - Pwd is invalid
@@ -97,8 +95,8 @@ public class AccountController : Controller
 
         if (newUserResponse.Succeeded)
             await _userManager.AddToRoleAsync(newUser, UserRoles.User);
-        
-        return RedirectToAction("Index","Home");
+
+        return RedirectToAction("Index", "Home");
     }
 
     // Log out

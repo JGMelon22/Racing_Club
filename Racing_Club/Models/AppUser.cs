@@ -7,8 +7,9 @@ public class AppUser : IdentityUser
     public string? ProfileImageUrl { get; set; }
     public string? City { get; set; }
     public string? State { get; set; }
-    [ForeignKey("Address")] 
-    public int? AddressId { get; set; } // We will link from address table
+
+    [ForeignKey("Address")] public int? AddressId { get; set; } // We will link from address table
+
     public Address? Address { get; set; }
     public ICollection<Club> Clubs { get; set; }
     public ICollection<Race> Races { get; set; }

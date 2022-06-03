@@ -14,10 +14,10 @@ public class UserController : Controller
     {
         // Bringing the DB calls and repository to the controller
         var users = await _usersRepository.GetAllUsers();
-        List<UserViewModel> result = new List<UserViewModel>();
+        var result = new List<UserViewModel>();
         foreach (var user in users)
         {
-            var userViewModel = new UserViewModel()
+            var userViewModel = new UserViewModel
             {
                 Id = user.Id,
                 UserName = user.UserName,
@@ -30,7 +30,7 @@ public class UserController : Controller
 
         return View(result);
     }
-    
+
     // Details
     public async Task<IActionResult> Detail(string id)
     {

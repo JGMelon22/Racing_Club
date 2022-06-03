@@ -24,7 +24,7 @@ public class PhotoService : IPhotoService
         if (file.Length > 0)
         {
             using var stream = file.OpenReadStream();
-            var uploadParams = new ImageUploadParams()
+            var uploadParams = new ImageUploadParams
             {
                 File = new FileDescription(file.FileName, stream), // Basic description 
                 Transformation = new Transformation().Height(500).Width(500)

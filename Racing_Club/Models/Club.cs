@@ -1,5 +1,3 @@
-using Racing_Club.Data.Enum;
-
 namespace Racing_Club.Models;
 
 public class Club

@@ -38,10 +38,8 @@ var app = builder.Build();
 
 // Data seeding registration
 if (args.Length == 1 && args[0].ToLower() == "seeddata")
-{
     await Seed.SeedUsersAndRolesAsync(app);
-    // Seed.SeedData(app);
-}
+// Seed.SeedData(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

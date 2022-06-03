@@ -8,5 +8,5 @@ public class CreateClubViewModel
     public IFormFile Image { get; set; }
     public Address Address { get; set; }
     public ClubCategory ClubCategory { get; set; }
-    public  string AppUserId { get; set; }
+    public string AppUserId { get; set; }
 }

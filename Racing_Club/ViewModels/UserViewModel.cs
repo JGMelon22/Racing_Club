@@ -1,6 +1,6 @@
 namespace Racing_Club.ViewModels;
 
-public class UserViewModel 
+public class UserViewModel
 {
     public string Id { get; set; }
     public string UserName { get; set; }

@@ -1,4 +1,3 @@
-@using Racing_Club.ViewModels
 @model List<UserViewModel>
 
 <div class="album py-5 bg-light">
@@ -7,7 +6,8 @@
             @foreach (var item in Model)
             {
                 <div class="col-md-4">
-                    <div class="card mb-4 box-shadow"> @*Here*@
+                    <div class="card mb-4 box-shadow">
+                        @*Here*@
                         <img class="card-img-top" src="@item.ProfileImageUrl" width="100%" height="225" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">@item.UserName</p>
